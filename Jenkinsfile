@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Compila aplicacio') {
       steps {
-        sh 'runBuild'
+        sh 'echo "compila"'
       }
     }
     stage('Tests unitaris') {
