@@ -47,7 +47,7 @@ pipeline {
             sh 'echo ""'
           }
         }
-        stage('Test rendiment PRE') {
+        stage('Tests rendiment PRE') {
           steps {
             sh 'echo ""'
           }
