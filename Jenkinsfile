@@ -12,15 +12,6 @@ pipeline {
       }
     }
     stage('Descarrega codi') {
-      agent {
-        docker {
-          image 'git'
-        }
-
-      }
-      environment {
-        GIT_REPOSITORY = 'https://github.com/jafernandez73/test'
-      }
       steps {
         sh 'echo ""'
       }
