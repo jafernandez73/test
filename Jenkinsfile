@@ -41,12 +41,12 @@ pipeline {
         sh 'echo ""'
       }
     }
-    stage('Desplegament PRE') {
+    stage('Desplegar PRE') {
       steps {
         sh 'echo ""'
       }
     }
-    stage('Tests usuari PRE') {
+    stage('Tests PRE') {
       parallel {
         stage('Tests usuari') {
           steps {
@@ -60,7 +60,7 @@ pipeline {
         }
       }
     }
-    stage('Desplegament PRO') {
+    stage('Desplegar PRO') {
       steps {
         sh 'echo ""'
       }
