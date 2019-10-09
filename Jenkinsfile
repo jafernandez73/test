@@ -7,6 +7,7 @@ pipeline {
         ttyEnabled true
         command 'cat'
       }
+
     }
 
   }
@@ -28,6 +29,11 @@ pipeline {
       }
       steps {
         git(url: 'df', branch: 'dfdf', credentialsId: 'dffd')
+      }
+    }
+    stage('Build') {
+      steps {
+        sh 'runBuild'
       }
     }
   }
