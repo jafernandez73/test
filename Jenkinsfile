@@ -1,16 +1,5 @@
 pipeline {
-  agent {
-    kubernetes {
-      containerTemplate {
-        name 'maven'
-        image 'maven:3.3.9-jdk-8-alpine'
-        ttyEnabled true
-        command 'cat'
-      }
-
-    }
-
-  }
+  agent any
   stages {
     stage('Inicialitzacio') {
       steps {
@@ -28,7 +17,7 @@ pipeline {
         GIT_REPOSITORY = 'https://github.com/jafernandez73/test'
       }
       steps {
-        git(url: '${GIT_REPOSITORY}', branch: 'master', credentialsId: 'githubtest', changelog: true, poll: true)
+        sh 'echo ""'
       }
     }
     stage('Compila aplicacio') {
