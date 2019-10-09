@@ -28,7 +28,7 @@ pipeline {
         dev = ''
       }
       steps {
-        git(url: 'df', branch: 'dfdf', credentialsId: 'dffd')
+        git(url: 'https://github.com/jafernandez73/test', branch: 'master', credentialsId: 'githubtest', changelog: true, poll: true)
       }
     }
     stage('Build') {
