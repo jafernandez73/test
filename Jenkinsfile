@@ -25,10 +25,10 @@ pipeline {
 
       }
       environment {
-        dev = ''
+        GIT_REPOSITORY = 'https://github.com/jafernandez73/test'
       }
       steps {
-        git(url: 'https://github.com/jafernandez73/test', branch: 'master', credentialsId: 'githubtest', changelog: true, poll: true)
+        git(url: '${GIT_REPOSITORY}', branch: 'master', credentialsId: 'githubtest', changelog: true, poll: true)
       }
     }
     stage('Build') {
