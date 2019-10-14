@@ -103,9 +103,28 @@ pipeline {
         sh 'echo "..."'
       }
     }
-    stage('PRE Smoke Test') {
-      steps {
-        sh 'echo "PRE Smoke Test"'
+    stage('PRE Test') {
+      parallel {
+        stage('PRE Smoke Test') {
+          steps {
+            sh 'echo "PRE Smoke Test"'
+          }
+        }
+        stage('Stress Test') {
+          steps {
+            sh 'echo "PRE Stress Test"'
+          }
+        }
+        stage('Acceptance Test') {
+          steps {
+            sh 'echo "Acceptance Test"'
+          }
+        }
+        stage('Exploratory Test') {
+          steps {
+            sh 'echo "Exploratory Test"'
+          }
+        }
       }
     }
     stage('ITSM PRE Update') {
@@ -150,6 +169,20 @@ pipeline {
       steps {
         sh 'echo "ITSM PRO Update"'
       }
-    }    
+    }
+    stage('Service Tasks') {
+      parallel {
+        stage('Tracking configuration') {
+          steps {
+            sh 'echo "Tracking configuration"'
+          }
+        }
+        stage('...') {
+          steps {
+            sh 'echo "..."'
+          }
+        }
+      }
+    }
   }
 }
