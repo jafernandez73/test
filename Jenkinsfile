@@ -16,6 +16,11 @@ pipeline {
         sh 'echo ""'
       }
     }
+    stage('Init Checks') {
+      steps {
+        sh 'echo "Init Checks"'
+      }
+    }    
     stage('ITSM Register ') {
       steps {
         sh 'echo "compila"'
@@ -40,7 +45,7 @@ pipeline {
         }
         stage('Security Static Code Test') {
           steps {
-            sh 'wcho "Security Static Code Test"'
+            sh 'echo "Security Static Code Test"'
           }
         }
       }
