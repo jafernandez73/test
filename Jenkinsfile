@@ -19,6 +19,8 @@ pipeline {
     stage('Init Checks') {
       steps {
         sh 'echo "Init Checks"'
+        sh 'echo "Version validation"'
+        sh 'echo "Tag validation"'
       }
     }
     stage('ITSM Register') {
