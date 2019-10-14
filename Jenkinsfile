@@ -60,9 +60,9 @@ pipeline {
         sh 'echo "Build Tag"'
       }
     }    
-    stage('Archive Actifact') {
+    stage('Artifact Archive') {
       steps {
-        sh 'echo "Archive Actifact"'
+        sh 'echo "Artifact Archive"'
       }
     }
     stage('Container Pre-Checks') {
@@ -85,12 +85,17 @@ pipeline {
         sh 'echo "Release Candidate Tag"'
       }
     }
+    stage('Artifact Release Candidate Update') {
+      steps {
+        sh 'echo "Artifact Release Candidate Update"'
+      }
+    }    
     stage('PRE Pre-Deploy') {
       steps {
         sh 'echo "PRE Pre-Deploy"'
-        sh 'echo "Database PRE pre-deploy actions"'
-        sh 'echo "API gateway PRE pre-deploy actions"'
-        sh 'echo "API manager PRE pre-deploy actions"'
+        sh 'echo "Database PRE Pre-deploy actions"'
+        sh 'echo "API gateway PRE Pre-deploy actions"'
+        sh 'echo "API manager PRE Pre-deploy actions"'
         sh 'echo "..."'
       }
     }
@@ -102,9 +107,9 @@ pipeline {
     stage('PRE Post-Deploy') {
       steps {
         sh 'echo "PRE Post-Deploy"'
-        sh 'echo "Database PRE post-deploy actions"'
-        sh 'echo "API gateway PRE post-deploy actions"'
-        sh 'echo "API manager PRE post-deploy actions"'
+        sh 'echo "Database PRE Post-deploy actions"'
+        sh 'echo "API gateway PRE Post-deploy actions"'
+        sh 'echo "API manager PRE Post-deploy actions"'
         sh 'echo "..."'
       }
     }
@@ -142,12 +147,17 @@ pipeline {
         sh 'echo "Release Tag"'
       }
     }
+    stage('Artifact Release Update') {
+      steps {
+        sh 'echo "Artifact Release Update"'
+      }
+    }    
     stage('PRO Pre-Deploy') {
       steps {
         sh 'echo "PRO Pre-Deploy"'
-        sh 'echo "Database PRO pre-deploy actions"'
-        sh 'echo "API gateway PRO pre-deploy actions"'
-        sh 'echo "API manager PRO pre-deploy actions"'
+        sh 'echo "Database PRO Pre-deploy actions"'
+        sh 'echo "API gateway PRO Pre-deploy actions"'
+        sh 'echo "API manager PRO Pre-deploy actions"'
         sh 'echo "..."'
       }
     }
@@ -159,9 +169,9 @@ pipeline {
     stage('PRO Post-Deploy') {
       steps {
         sh 'echo "PRO Post-Deploy"'
-        sh 'echo "Database PRO post-deploy actions"'
-        sh 'echo "API gateway PRO post-deploy actions"'
-        sh 'echo "API manager PRO post-deploy actions"'
+        sh 'echo "Database PRO Post-deploy actions"'
+        sh 'echo "API gateway PRO Post-deploy actions"'
+        sh 'echo "API manager PRO Post-deploy actions"'
         sh 'echo "..."'
       }
     }
