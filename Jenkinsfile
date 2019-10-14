@@ -59,7 +59,7 @@ pipeline {
       steps {
         sh 'echo "Build Tag"'
       }
-    }    
+    }
     stage('Artifact Archive') {
       steps {
         sh 'echo "Artifact Archive"'
@@ -89,7 +89,7 @@ pipeline {
       steps {
         sh 'echo "Artifact Release Candidate Update"'
       }
-    }    
+    }
     stage('PRE Pre-Deploy') {
       steps {
         sh 'echo "PRE Pre-Deploy"'
@@ -151,7 +151,7 @@ pipeline {
       steps {
         sh 'echo "Artifact Release Update"'
       }
-    }    
+    }
     stage('PRO Pre-Deploy') {
       steps {
         sh 'echo "PRO Pre-Deploy"'
