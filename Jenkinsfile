@@ -74,16 +74,20 @@ pipeline {
     stage('Container Pre-Checks') {
       steps {
         sh 'echo "Container Pre-Checks"'
+        sh 'echo "Dockerfile validation"'
       }
     }
     stage('Container Build') {
       steps {
         sh 'echo "Container Build"'
+        sh 'echo "Image create"'
+        sh 'echo "Publish to Registry"'
       }
     }
     stage('Container Post-Checks') {
       steps {
         sh 'echo "Container Post-Checks"'
+        sh 'echo "Vulnerabilities validation"'
       }
     }
     stage('Release Candidate Management') {
