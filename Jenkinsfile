@@ -6,43 +6,48 @@ pipeline {
 
   }
   stages {
-    stage('Inicialitzacio') {
+    stage('Init') {
       steps {
         sh 'echo "Init"'
       }
     }
-    stage('Descarrega codi') {
+    stage('Checkout') {
       steps {
         sh 'echo ""'
       }
     }
-    stage('Compila aplicacio') {
+    stage('ITSM Register ') {
       steps {
         sh 'echo "compila"'
       }
     }
-    stage('Tests unitaris') {
+    stage('Build') {
       steps {
         sh 'echo ""'
       }
     }
-    stage('Desplegar PRE') {
-      steps {
-        sh 'echo ""'
-      }
-    }
-    stage('Tests PRE') {
+    stage('Code Test') {
       parallel {
-        stage('Tests usuari') {
+        stage('Unit Test') {
           steps {
             sh 'echo ""'
           }
         }
-        stage('Tests rendiment PRE') {
+        stage('Quality Static Code Test') {
           steps {
-            sh 'echo ""'
+            sh 'echo "Quality Static Code Test"'
           }
         }
+        stage('Security Static Code Test') {
+          steps {
+            sh 'wcho "Security Static Code Test"'
+          }
+        }
+      }
+    }
+    stage('Commit Test') {
+      steps {
+        sh 'echo ""'
       }
     }
     stage('Desplegar PRO') {
