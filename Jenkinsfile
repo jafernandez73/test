@@ -175,9 +175,11 @@ pipeline {
         sh 'echo "..."'
       }
     }
-    stage('PRO Smoke Test') {
-      steps {
-        sh 'echo "PRO Smoke Test"'
+    stage('PRO Test') {
+      parallel {
+        stage('PRO Smoke Test') {    
+          sh 'echo "PRO Smoke Test"'
+        }
       }
     }
     stage('ITSM PRO Update') {
