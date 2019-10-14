@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Checkout') {
       steps {
-        sh 'echo ""'
+        sh 'echo "Checkout"'
       }
     }
     stage('Init Checks') {
@@ -21,21 +21,21 @@ pipeline {
         sh 'echo "Init Checks"'
       }
     }
-    stage('ITSM Register ') {
+    stage('ITSM Register') {
       steps {
-        sh 'echo "compila"'
+        sh 'echo "ITSM Register"'
       }
     }
     stage('Build') {
       steps {
-        sh 'echo ""'
+        sh 'echo "Build"'
       }
     }
     stage('Code Test') {
       parallel {
         stage('Unit Test') {
           steps {
-            sh 'echo ""'
+            sh 'echo "Unit Test"'
           }
         }
         stage('Quality Static Code Test') {
@@ -55,6 +55,11 @@ pipeline {
         }
       }
     }
+    stage('Build Tag') {
+      steps {
+        sh 'echo "Build Tag"'
+      }
+    }    
     stage('Archive Actifact') {
       steps {
         sh 'echo "Archive Actifact"'
@@ -67,7 +72,7 @@ pipeline {
     }
     stage('Container Build') {
       steps {
-        sh 'echo ""'
+        sh 'echo "Container Build"'
       }
     }
     stage('Container Post-Checks') {
