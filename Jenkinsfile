@@ -90,6 +90,11 @@ pipeline {
         sh 'echo "Vulnerabilities validation"'
       }
     }
+    stage('PRE Deploy Confirmation') {
+      steps {
+        sh 'echo "PRE Deploy Confirmation"'
+      }
+    }    
     stage('Release Candidate Management') {
       parallel {
         stage('Release Candidate Tag') {
@@ -156,6 +161,11 @@ pipeline {
         sh 'echo "ITSM PRE Update"'
       }
     }
+    stage('PRO Deploy Confirmation') {
+      steps {
+        sh 'echo "PRO Deploy Confirmation"'
+      }
+    }    
     stage('Release Management') {
       parallel {
         stage('Release Tag') {
