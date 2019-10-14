@@ -150,7 +150,7 @@ pipeline {
         sh 'echo "ITSM PRE Update"'
       }
     }
-    stage('Release Candidate Management') {
+    stage('Release Management') {
       parallel {
         stage('Release Tag') {
           steps {
