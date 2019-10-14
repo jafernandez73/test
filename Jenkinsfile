@@ -94,7 +94,7 @@ pipeline {
       steps {
         sh 'echo "PRE Deploy Confirmation"'
       }
-    }    
+    }
     stage('Release Candidate Management') {
       parallel {
         stage('Release Candidate Tag') {
@@ -165,7 +165,7 @@ pipeline {
       steps {
         sh 'echo "PRO Deploy Confirmation"'
       }
-    }    
+    }
     stage('Release Management') {
       parallel {
         stage('Release Tag') {
