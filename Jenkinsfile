@@ -55,14 +55,18 @@ pipeline {
         }
       }
     }
-    stage('Build Tag') {
-      steps {
-        sh 'echo "Build Tag"'
-      }
-    }
-    stage('Artifact Archive') {
-      steps {
-        sh 'echo "Artifact Archive"'
+    stage('Build Management') {
+      parallel {
+        stage('Build Tag') {
+          steps {
+            sh 'echo "Build Tag"'
+          }
+        }
+        stage('Artifact Archive') {
+          steps {
+            sh 'echo "Artifact Archive"'
+          }
+        }
       }
     }
     stage('Container Pre-Checks') {
@@ -80,14 +84,18 @@ pipeline {
         sh 'echo "Container Post-Checks"'
       }
     }
-    stage('Release Candidate Tag') {
-      steps {
-        sh 'echo "Release Candidate Tag"'
-      }
-    }
-    stage('Artifact Release Candidate Update') {
-      steps {
-        sh 'echo "Artifact Release Candidate Update"'
+    stage('Release Candidate Management') {
+      parallel {
+        stage('Release Candidate Tag') {
+          steps {
+            sh 'echo "Release Candidate Tag"'
+          }
+        }
+        stage('Artifact Release Candidate Update') {
+          steps {
+            sh 'echo "Artifact Release Candidate Update"'
+          }
+        }
       }
     }
     stage('PRE Pre-Deploy') {
@@ -142,14 +150,18 @@ pipeline {
         sh 'echo "ITSM PRE Update"'
       }
     }
-    stage('Release Tag') {
-      steps {
-        sh 'echo "Release Tag"'
-      }
-    }
-    stage('Artifact Release Update') {
-      steps {
-        sh 'echo "Artifact Release Update"'
+    stage('Release Candidate Management') {
+      parallel {
+        stage('Release Tag') {
+          steps {
+            sh 'echo "Release Tag"'
+          }
+        }
+        stage('Artifact Release Update') {
+          steps {
+            sh 'echo "Artifact Release Update"'
+          }
+        }
       }
     }
     stage('PRO Pre-Deploy') {
